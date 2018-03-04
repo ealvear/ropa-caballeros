@@ -1,0 +1,111 @@
+<app-navbar> </app-navbar>
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <section>
+            <div class="air" style="text-align:center;">
+
+            <h1>Alvear’s Boutique</h1>
+                           <img src="/assets/img/BoutiqueAlvears.svg" alt="" height="150px" width="150px" class="imgcenter" /> 
+                           <h6>Puedes Realizar tu pedido maximo 5 prendas</h6>
+                        </div>
+            <div class="forms" style="text-align:left;">
+                <form (ngSubmit)="onSubmit(Formpedido);" #Formpedido="ngForm">
+                         <!--          <mat-form-field> -->
+                           
+                    <table >                         
+                         <tr>                            
+                            <td>                                          
+                                <tr><td><h4>Nombre:</h4>
+                                        </td>
+                                        <td>
+                                                <input  #nombre maxlength="80" [(ngModel)]="Formpedido.nombre" name="nombre" required>        
+                                            </td> 
+                                </tr>
+                                <tr><td>
+                                        <h4>Tipo de Identificacion</h4> 
+                                </td><td>                                        
+                                        <div class="form-group">                                            
+                                                <div class="col-xs-5 selectContainer">
+                                                    <select class="form-control" name="size">
+                                                            <option value="0">Tipo Identificacion</option>
+                                                        <option value="cedula">Cedula</option>
+                                                        <option value="tarjetaIdentidad">Tarjeta de Identidad</option>
+                                                        <option value="pasaporte">Pasaporte</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                </td>
+                               
+                                </tr>
+                               <tr><td><h4>Numero de Identificacion</h4></td>
+                                    <td>
+                                    <input  #id maxlength="80" [(ngModel)]="PedidoModel.id" name="id" required>
+                                    </td></tr>
+                                <tr>
+                                    <td><h4>Tipo de Producto</h4></td>
+                                    <td>                                      
+                                        <div class="form-group">                                            
+                                                <div class="col-xs-5 selectContainer">
+                                                    <select class="form-control" name="size">
+                                                        <option value="0">TipoProducto</option>
+                                                        <option value="camisas">Camisas Elegantes</option>
+                                                        <option value="pantalones">Pantalones Elegantes</option>
+                                                        <option value="sacos">Sacos Elegantes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                </td>
+                                <td></td>
+                                </tr>
+                                <tr><td><h4>Cantidad Producto</h4></td>
+                                    <td> <div class="form-group">                                            
+                                            <div class="col-xs-5 selectContainer">
+                                                <select class="form-control" name="size">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div> </td>                                    
+                                </tr>
+                                <tr>
+                                    <td><h4>Fecha y Hora Entrega</h4> </td>
+                                   <td>
+                                    <input matInput placeholder="dd/mm/aa-00:00" #fechayHora maxlength="80" [(ngModel)]="PedidoModel.fechayHora"
+                                        name="fechayHora" required>
+                                    </td>
+                                    </tr>
+                                <tr><td><h4>Direccion de Entrega</h4></td>
+                                   <td>
+                                    <input  #dirEntrega maxlength="80" [(ngModel)]="PedidoModel.dirEntrega"
+                                        name="dirEntrega" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <br>
+                                    <button mat-raised-button color="primary"  [disabled]="!Formpedido.form.valid">Enviar</button>
+                                </tr>
+                            </td>
+                                                   
+                            
+
+                        </tr>
+
+                    </table>
+
+                    <h2>Probar POST</h2>
+                    <button (click)="postProfile()"> Hacer Post</button>
+
+                </form>
+
+            </div>
+
+
+        </section>
+    </div>
+
+</main>
