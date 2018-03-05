@@ -22,23 +22,21 @@ export class AppComponent {
     this.found = false;
   }
 
-  getData(): void {
-    this.data$ = this._svc.getData();
-  }
 
   postProfile() {
-
-    this.httpClient.post(`http://localhost:9080//RestJR/services/alveares/validarPedido`,
+    this.httpClient.post(`http://localhost:9080/RestJR/services/alveares/validarPedido`,
       // this.httpClient.post(`/comprobantes-electronicos-ws/RestJR/services/alveares/validarPedido`,
       //PONERLO EN  package.json -> "start": "ng serve --proxy-config proxy.conf.json",
       {
         nombre: "Andres",
         tipoId: "cedula",
         id: 1063811690,
-        numeroProductos: 5,
+        tipoProductos: "camisas",
+        cantidadProductos: 5,
         precioTotal: 2000,
         fechayHora: "21-03-2018",
-        dirEntrega: "cra 27"
+        dirEntrega: "cra 27",
+
       })
       .subscribe(
         (data: any) => {

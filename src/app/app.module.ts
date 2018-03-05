@@ -15,16 +15,16 @@ import { FormsModule } from '@angular/forms';
 
 import { VenderComponent } from './vender/vender.component';
 import { HomeComponent } from './home/home.component';
-import { SendEmailService } from './services/send-email.service';
 
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
     VenderComponent,
-    HomeComponent
-
+    HomeComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -34,10 +34,12 @@ import { SendEmailService } from './services/send-email.service';
     NgbModule.forRoot(),
     RouterRoutingModule,
     InterceptorModule,
+    HttpModule
   ],
   providers: [
-    SendEmailService,
+    
     DataService,
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,

@@ -41,7 +41,7 @@
                                 </tr>
                                <tr><td><h4>Numero de Identificacion</h4></td>
                                     <td>
-                                    <input  #id maxlength="80" [(ngModel)]="PedidoModel.id" name="id" required>
+                                    <input  #id maxlength="80" [(ngModel)]="Formpedido.id" name="id" required>
                                     </td></tr>
                                 <tr>
                                     <td><h4>Tipo de Producto</h4></td>
@@ -75,19 +75,19 @@
                                 <tr>
                                     <td><h4>Fecha y Hora Entrega</h4> </td>
                                    <td>
-                                    <input matInput placeholder="dd/mm/aa-00:00" #fechayHora maxlength="80" [(ngModel)]="PedidoModel.fechayHora"
+                                    <input matInput placeholder="dd/mm/aa-00:00" #fechayHora maxlength="80" [(ngModel)]="Formpedido.fechayHora"
                                         name="fechayHora" required>
                                     </td>
                                     </tr>
                                 <tr><td><h4>Direccion de Entrega</h4></td>
                                    <td>
-                                    <input  #dirEntrega maxlength="80" [(ngModel)]="PedidoModel.dirEntrega"
+                                    <input  #dirEntrega maxlength="80" [(ngModel)]="Formpedido.dirEntrega"
                                         name="dirEntrega" required>
                                     </td>
                                 </tr>
                                 <tr>
                                 <br>
-                                    <button mat-raised-button color="primary"  [disabled]="!Formpedido.form.valid">Enviar</button>
+                                    <button mat-raised-button color="primary" >Enviar</button>
                                 </tr>
                             </td>
                                                    
@@ -97,8 +97,7 @@
 
                     </table>
 
-                    <h2>Probar POST</h2>
-                    <button (click)="postProfile()"> Hacer Post</button>
+                    
 
                 </form>
 
